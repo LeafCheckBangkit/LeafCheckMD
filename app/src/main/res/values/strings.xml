@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">LeafCheck</string>
+
+
+    <!-- Title menu xml -->
+    <string name="menu_title_blank" translatable="false">" "</string>
+    <string name="menu_title_bottom_nav_home">Home</string>
+    <string name="menu_title_bottom_nav_profile">Profile</string>
+    <string name="menu_title_bottom_nav_camera">Camera</string>
+
+    <!-- Content Description layout xml -->
+    <string name="content_description_fab_add_story">New Story</string>
+    <string name="const_greetings_auth_page">Hi, Welcome to</string>
+    <string name="const_text_login">Login</string>
+
+    <!-- Constant Value text -->
+    <string name="const_copyright" translatable="false">\Company</string>
+    <string name="const_text_email" translatable="false">Email</string>
+    <string name="const_text_password" translatable="false">Password</string>
+    <string name="const_text_auth_question_login">don\'t have an account?</string>
+    <string name="const_text_register">Register</string>
+    <string name="const_text_auth_question_register">Already have an account?</string>
+    <string name="const_text_name">Name</string>
+
+
+    <!-- Button text layout xml -->
+    <string name="button_text_signin">Sign In</string>
+    <string name="button_text_signup">Sign Up</string>
+
+    <!-- UI Error -->
+    <string name="UI_validation_invalid_email">Email format is invalid</string>
+    <string name="UI_validation_password_rules">Password must contain at least 8 characters</string>
+
+
+
+</resources>
