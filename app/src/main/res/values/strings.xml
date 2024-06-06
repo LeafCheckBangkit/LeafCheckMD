@@ -21,11 +21,15 @@
     <string name="const_text_register">Register</string>
     <string name="const_text_auth_question_register">Already have an account?</string>
     <string name="const_text_name">Name</string>
+    <string name="content_description_avatar_image">Default Avatar Image</string>
+
 
 
     <!-- Button text layout xml -->
     <string name="button_text_signin">Sign In</string>
     <string name="button_text_signup">Sign Up</string>
+    <string name="button_text_logout">Logout</string>
+
 
     <!-- UI Error -->
     <string name="UI_validation_invalid_email">Email format is invalid</string>
