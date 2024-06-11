@@ -4,4 +4,10 @@
     <item name="label_appName" type="id" />
     <item name="label_auth" type="id" />
     <item name="btn_action" type="id" />
+    <item name="viewFinder" type="id" />
+    <item name="container_top" type="id" />
+    <item name="btn_back" type="id" />
+    <item name="container_bottom" type="id" />
+    <item name="btn_gallery" type="id" />
+    <item name="btn_shutter" type="id" />
 </resources>

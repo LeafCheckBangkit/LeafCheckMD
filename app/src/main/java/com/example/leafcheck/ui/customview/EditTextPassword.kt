@@ -49,7 +49,7 @@ class EditTextPassword : AppCompatEditText {
         })
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         hint = "Password"
         context.apply {

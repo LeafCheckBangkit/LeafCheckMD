@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.leafcheck.ui.dashboard.home.FragmentHome"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.leafcheck.ui.dashboard.profile.FragmentProfile"
+        android:label="profile_fragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.leafcheck.ui.dashboard.home.CameraActivity"
+        android:label="camera_activity"
+        tools:layout="@layout/activity_camera" />
+</navigation>

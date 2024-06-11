@@ -22,6 +22,9 @@
     <string name="const_text_auth_question_register">Already have an account?</string>
     <string name="const_text_name">Name</string>
     <string name="content_description_avatar_image">Default Avatar Image</string>
+    <string name="content_description_btn_camera_back">Button Back to homescreen</string>
+    <string name="content_description_btn_shutter_camera">Take a photo</string>
+    <string name="content_descrption_btn_gallery">Pick Image from Gallery</string>
 
 
 

@@ -19,8 +19,6 @@ class RegistrasiActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
     }
 
 }
