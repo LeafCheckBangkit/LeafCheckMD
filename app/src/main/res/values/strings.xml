@@ -12,6 +12,8 @@
     <string name="content_description_fab_add_story">New Story</string>
     <string name="const_greetings_auth_page">Hi, Welcome to</string>
     <string name="const_text_login">Login</string>
+    <string name="content_description_image">User Image</string>
+
 
     <!-- Constant Value text -->
     <string name="const_copyright" translatable="false">\Company</string>
@@ -32,6 +34,8 @@
     <string name="button_text_signin">Sign In</string>
     <string name="button_text_signup">Sign Up</string>
     <string name="button_text_logout">Logout</string>
+    <string name="button_text_scan">Scan Image</string>
+
 
 
     <!-- UI Error -->
