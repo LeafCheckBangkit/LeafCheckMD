@@ -18,7 +18,7 @@
 
     <activity
         android:id="@+id/cameraActivity"
-        android:name="com.example.leafcheck.ui.dashboard.home.CameraActivity"
+        android:name="com.example.leafcheck.ui.view.CameraActivity"
         android:label="camera_activity"
         tools:layout="@layout/activity_camera" />
 </navigation>

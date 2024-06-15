@@ -13,7 +13,7 @@
         android:theme="@style/Theme.LeafCheck"
         tools:targetApi="31">
         <activity
-            android:name=".ui.dashboard.home.CameraActivity"
+            android:name=".ui.view.CameraActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.LoginActivity"
@@ -21,6 +21,12 @@
         <activity
             android:name=".ui.auth.RegistrasiActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ui.view.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.ScanActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"/>

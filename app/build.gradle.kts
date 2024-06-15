@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-parcelize")
+
 }
 
 android {
@@ -35,6 +37,8 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        mlModelBinding = true
+        buildConfig = true
     }
 }
 
@@ -62,4 +66,8 @@ dependencies {
     implementation("androidx.camera:camera-camera2:1.1.0-beta03")
     implementation("androidx.camera:camera-lifecycle:1.1.0-beta03")
     implementation("androidx.camera:camera-view:1.1.0-beta03")
+
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
 }
