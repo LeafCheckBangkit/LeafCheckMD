@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.leafcheck.databinding.ActivityResultBinding
 import com.example.leafcheck.utils.ImageClassifierHelper
-import org.tensorflow.lite.task.vision.classifier.Classifications
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -31,8 +30,8 @@ class ResultActivity : AppCompatActivity() {
                         showToast("Error: $error")
                     }
 
-                    override fun onResults(result: List<Classifications>?, inferenceTime: Long) {
-                        result?.let { showResult(it, imageString) }
+                    override fun onResults(result: FloatArray?, inferenceTime: Long) {
+                        result?.let { showResult(it) }
                     }
                 }
             )
@@ -45,7 +44,6 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Pastikan sumber daya ditutup
         imageClassifierHelper = null
     }
 
@@ -53,18 +51,26 @@ class ResultActivity : AppCompatActivity() {
         Toast.makeText(this, mess, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showResult(result: List<Classifications>, uri: String) {
-        val topResult = result[0]
-        val label = topResult.categories[0].label
-        val score = topResult.categories[0].score
+    private fun showResult(result: FloatArray) {
+        // Menentukan kondisi dengan probabilitas tertinggi
+        val maxIndex = result.indices.maxByOrNull { result[it] } ?: -1
 
-        // Menampilkan hasil dalam bentuk teks
-        val resultText = "$label (${(score * 100).toInt()}%)"
-        binding.resultText.text = resultText
+        // Pesan berdasarkan kondisi dengan probabilitas tertinggi
+        val message = when (maxIndex) {
+            0 -> "Keterangan: Pohon apel anda sehat"
+            1 -> "Keterangan: Pohon apel anda sakit"
+            2 -> "Keterangan: Pohon jeruk anda sehat"
+            3 -> "Keterangan: Pohon jeruk anda sakit"
+            4 -> "Keterangan: Pohon mangga anda sehat"
+            5 -> "Keterangan: Pohon mangga anda sakit"
+            else -> "Keterangan: Tidak dapat menentukan kondisi"
+        }
 
-        // Menampilkan label dan score di logcat
-        Log.d(TAG, "Result: $resultText")
+        // Menampilkan pesan
+        binding.resultText.text = message
+        Log.d(TAG, "Result: $message")
     }
+
 
     private fun displayImage(uri: Uri) {
         Log.d(TAG, "Display Image: $uri")
