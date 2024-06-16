@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LeafCheck"
         tools:targetApi="31">
+        <activity android:name=".ui.dashboard.home.DetailActivity" />
+
         <activity
             android:name=".ui.view.CameraActivity"
             android:exported="false" />
@@ -31,6 +33,7 @@
             android:name=".MainActivity"
             android:exported="true"/>
         <activity
+
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>

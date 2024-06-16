@@ -50,6 +50,51 @@
     <string name="UI_error_camera_take_photo">Failed take a picture</string>
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
 
+    <string-array name="data_name">
+        <item>Daun Puring</item>
+        <item>Gelombang Cinta</item>
+        <item>Lidah Mertua</item>
+        <item>Sirih Gading</item>
+        <item>Suplir</item>
+        <item>Sri Rejeki</item>
+        <item>Lili Paris</item>
+        <item>Pucuk Merah</item>
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Tak semua tanaman hias daun identik dengan warna hijau yang asri dan menyejukkan, ada pula tanaman hias daun yang disukai justru karena daun dari tanaman tersebut memiliki warna-warna cerah yang mencolok seperti Tanaman Hias Daun Puring.
+
+Hadir dengan warna kemerahan dan keunguan yang bergradasi dengan hijaunya daun menjadikan suasana taman bisa jadi lebih hidup.</item>
+        <item>Tanaman hias daun satu ini merupakan salah satu yang paling populer. Terkenal akan bentuk daunnya yang besar dan bergelombang, tanaman gelombang cinta ini tepat dijadikan tanaman hias baik untuk menghias taman ataupun mengisi pojok ruang atau teras rumah.</item>
+        <item>Tak kalah populer dari tanaman hias daun sebelumnya, Sansevieria yang lebih terkenal dengan nama Lidah Mertua adalah tanaman hias daun lainnya yang bisa Toppers pilih untuk melengkapi koleksi tanaman hias dirumah.
+
+Memiliki pola daun memanjang keatas dengan aksen warna menguning pada bagian pinggirannya, tanaman hias daun ini juga digemari karena khasiatnya mengurangi radiasi dan juga polusi udara.</item>
+        <item>Sangat mudah dirawat dan ditemukan, Sirih Gading bisa menjadi alternatif tanaman hias daun selanjutnya untuk menghiasi taman rumahmu. Sifatnya yang merambat membuat tanaman hias daun ini tepat untuk menghiasi dinding atau dijadikan tanaman gantung.
+
+Warnanya yang hijau cerah membuat suasana menjadi lebih segar dengan kehadiran tanaman Sirih Gading ini.</item>
+        <item>Selain tanaman Sirih Gading, tanaman hias daun lain yang juga bisa jadikan tanaman gantung adalah Suplir. Telah lama populer di Indonesia, Suplir termasuk tanaman hias daun yang cukup mudah ditemui dan mudah dirawat karena habitatnya yang lembab sesuai dengan iklim Indonesia.</item>
+        <item>Dikenal juga dengan nama Simbar Menjangan, Tanduk Rusa adalah tanaman hias daun yang sangat umum ditemui di negara-negara beriklim tropis
+
+Untuk bisa menanam tanaman ini, Toppers harus memiliki pohon untuk dijadikan ‘inang’ agar tanaman ini bisa hidup. Bentuknya yang sangat unik membuat tanaman hias daun ini sangat populer.</item>
+        <item>Sri Rejeki atau Aglaonema adalah tanaman hias daun yang cukup populer di Indonesia. Umumnya, tanaman ini tak tahan terhadap sinar matahari langsung sehingga lebih sering dijadikan hiasan untuk di dalam ruangan.
+
+Salah satu alasan mengapa tanaman hias daun ini digemari adalah kepercayaan masyarakat yang percaya bahwa tanaman ini bisa membawa keberuntungan.</item>
+        <item>Lili Paris merupakan alternatif tanaman hias daun untuk Toppers yang memiliki lahan terbatas karena ukuran tanaman ini yang tak terlalu besar. Tak hanya ditanam di taman atau pot bunga, Lili Paris juga bisa dijadikan tanaman gantung.
+
+Tanaman hias daun satu ini juga sangat mudah dirawat dan mampu beradaptasi dengan berbagai lingkungan sehingga cocok untuk dijadikan tanaman hias outdoor ataupun indoor.</item>
+        <item>Sesuai dengan namanya, tanaman hias daun selanjutnya ini memiliki bagian pucuk tunas yang berwarna kemerahan. Tanaman ini bisa tumbuh menjadi besar dan rimbun sehingga kerap dijadikan sebagai tanaman pagar atau pembatas di taman.</item>
+    </string-array>
+    <integer-array name="data_photo">
+        <item>@drawable/daun_puring</item>
+        <item>@drawable/gelombang_cinta</item>
+        <item>@drawable/lidah_mertua</item>
+        <item>@drawable/sirih_gading</item>
+        <item>@drawable/suplir</item>
+        <item>@drawable/tanduk_rusa</item>
+        <item>@drawable/sri_rejeki</item>
+        <item>@drawable/lili_paris</item>
+        <item>@drawable/pucuk_merah</item>
+    </integer-array>
 
 
 
