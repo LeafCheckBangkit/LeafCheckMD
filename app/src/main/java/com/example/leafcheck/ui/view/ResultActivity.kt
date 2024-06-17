@@ -7,15 +7,21 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.leafcheck.databinding.ActivityResultBinding
 import com.example.leafcheck.utils.ImageClassifierHelper
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
     private var imageClassifierHelper: ImageClassifierHelper? = null
+    private lateinit var labels: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Load labels from assets/labels.txt
+        labels = loadLabels()
 
         val imageString = intent.getStringExtra(IMAGE_URI)
         if (imageString != null) {
@@ -47,30 +53,40 @@ class ResultActivity : AppCompatActivity() {
         imageClassifierHelper = null
     }
 
+    private fun loadLabels(): List<String> {
+        val labels = mutableListOf<String>()
+        try {
+            val reader = BufferedReader(InputStreamReader(assets.open("labels.txt")))
+            reader.useLines { lines ->
+                lines.forEach { line ->
+                    Log.d(TAG, "Loaded label: $line")
+                    labels.add(line)
+                }
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error reading labels", e)
+        }
+        return labels
+    }
+
     private fun showToast(mess: String) {
         Toast.makeText(this, mess, Toast.LENGTH_SHORT).show()
     }
 
     private fun showResult(result: FloatArray) {
-        // Menentukan kondisi dengan probabilitas tertinggi
+        Log.d(TAG, "Result array: ${result.joinToString()}")
+
         val maxIndex = result.indices.maxByOrNull { result[it] } ?: -1
 
-        // Pesan berdasarkan kondisi dengan probabilitas tertinggi
-        val message = when (maxIndex) {
-            0 -> "Keterangan: Pohon apel anda sehat"
-            1 -> "Keterangan: Pohon apel anda sakit"
-            2 -> "Keterangan: Pohon jeruk anda sehat"
-            3 -> "Keterangan: Pohon jeruk anda sakit"
-            4 -> "Keterangan: Pohon mangga anda sehat"
-            5 -> "Keterangan: Pohon mangga anda sakit"
-            else -> "Keterangan: Tidak dapat menentukan kondisi"
+        val message = if (maxIndex in labels.indices) {
+            "Keterangan: ${labels[maxIndex]}"
+        } else {
+            "Keterangan: Tidak dapat menentukan kondisi"
         }
 
-        // Menampilkan pesan
         binding.resultText.text = message
         Log.d(TAG, "Result: $message")
     }
-
 
     private fun displayImage(uri: Uri) {
         Log.d(TAG, "Display Image: $uri")

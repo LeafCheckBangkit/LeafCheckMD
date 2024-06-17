@@ -55,6 +55,11 @@ class ScanActivity : AppCompatActivity() {
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
         binding.uploadButton.setOnClickListener { uploadImage() }
+        binding.btnWeb.setOnClickListener { openWebPage() }
+    }
+    private fun openWebPage() {
+        val intent = Intent(this, WebViewActivity::class.java)
+        startActivity(intent)
     }
 
     private fun startGallery() {
@@ -111,5 +116,7 @@ class ScanActivity : AppCompatActivity() {
 
     companion object {
         private const val REQUIRED_PERMISSION = Manifest.permission.CAMERA
+//        private const val REQUIRED_PERMISSION_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE
+
     }
 }

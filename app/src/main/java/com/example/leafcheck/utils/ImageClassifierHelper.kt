@@ -7,13 +7,17 @@ import android.net.Uri
 import android.os.Build
 import android.os.SystemClock
 import android.provider.MediaStore
+import android.util.Log
 import com.example.leafcheck.ml.ModelFix95
 import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.common.ops.NormalizeOp
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.image.ImageProcessor
 import java.nio.ByteBuffer
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class ImageClassifierHelper(
     val context: Context,
@@ -38,7 +42,9 @@ class ImageClassifierHelper(
 
         val imageProcessor = ImageProcessor.Builder()
             .add(ResizeOp(150, 150, ResizeOp.ResizeMethod.NEAREST_NEIGHBOR))
+            .add(NormalizeOp(0.0f, 1.0f))  // Normalizing to range [0, 1]
             .build()
+
 
         val tensorImage = TensorImage(DataType.FLOAT32)
         tensorImage.load(toBitmap(imageUri))
@@ -50,17 +56,23 @@ class ImageClassifierHelper(
         inputFeature0.loadBuffer(byteBuffer)
 
         var inferenceTime = SystemClock.uptimeMillis()
-        val outputs = model.process(inputFeature0)
-        inferenceTime = SystemClock.uptimeMillis() - inferenceTime
+        try {
+            val outputs = model.process(inputFeature0)
+            inferenceTime = SystemClock.uptimeMillis() - inferenceTime
+            val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
+            if (outputFeature0.size != 6) {
+                classifierListener?.onError("Model output size mismatch: ${outputFeature0.size} != 6")
+                return
+            }
 
-        classifierListener?.onResults(
-            outputFeature0,
-            inferenceTime
-        )
-
-        model.close()
+            classifierListener?.onResults(outputFeature0, inferenceTime)
+            Log.d(TAG, "Output probabilities: ${outputFeature0.joinToString()}")
+        } catch (e: Exception) {
+            classifierListener?.onError("Error during model inference: ${e.message}")
+        } finally {
+            model.close()
+        }
     }
 
     private fun toBitmap(imageUri: Uri): Bitmap {

@@ -19,7 +19,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.example.leafcheck.databinding.ActivityCameraBinding
-import com.example.leafcheck.ui.view.ScanActivity
+//import com.example.leafcheck.ui.view.ScanActivity1
 
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
