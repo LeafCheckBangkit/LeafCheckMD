@@ -1,0 +1,6 @@
+Healthy Apple Leaves
+Unhealthy Apple Leaves
+Healthy Mango Leaves
+Unhealthy Mango Leaves
+Healthy Orange Leaves
+Unhealthy Orange Leaves
